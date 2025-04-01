@@ -1,0 +1,476 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'Poppins',sans-serif;
+    box-sizing: border-box;
+}
+html{
+    max-width: 100%;
+}
+body{
+    max-width: 100%;
+}
+.error{
+    color: red;
+}
+.success{
+    color: green;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px;
+    height: 70px;
+    background-color: white;
+    
+}
+header .logo{
+    font-size: 1.5rem;
+}
+header .logo a{
+    text-decoration: none;
+    color: blue;
+    margin: 10px;
+  width: 100%;
+  max-width: 100%;
+  z-index: 1000;
+}
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+nav ul li{
+    list-style: none;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: blue;
+}
+nav ul li a:hover{
+    color: black;
+    border-bottom: 2px solid black;
+}
+.searchbtn{
+    position: relative;
+    width: 300px;
+    margin-left: 6px;
+    margin-right: 6px;
+    
+}
+.searchbtn input{
+      width: 100%;
+      padding: 3%;
+      border: none;
+      outline: none;
+      background-color: rgba(0, 0,0, .1);
+      border-radius: 3%;
+      padding-right: 20px;
+}
+.searchbtn button{
+    background-color: blue;
+    padding: 3%;
+    border: none;
+    color: white;
+    border-radius: 3%;
+    position: absolute;
+    top: 0px;
+    right: -2%;
+}
+.menu{
+    display: none;
+    margin: 6px;
+}
+
+.hero{
+    margin: 5%;
+    color: white;
+    background-color: blue;
+    padding: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200px;
+}
+.hero h3{
+    text-align: center;
+    margin: 7px;
+    padding: 5px;
+}
+.hero a{
+    background-color: white;
+    color: black;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 5%;
+}
+footer{
+    background-color: rgba(0, 0,0, .1);
+    margin-top: 200px;
+}
+footer p.copy{
+    text-align: center;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+.cont{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    padding: 2%;
+}
+.footer{
+    display: grid;
+    grid-template-columns: repeat(3,30vw);
+    gap: 2%;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+   
+    font-size: 10px;
+    width: 60%;
+   
+ padding: 6%;
+}
+.box p{
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.box .item{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item a{
+    color: black;
+    
+    
+}
+
+.hero a:hover{
+     background-color: #c3e7e680;
+}
+.contact{
+    margin: 4%;
+}
+.contact p{
+    text-align: center;
+}
+.socials{
+    display: grid;
+    grid-template-columns: repeat(2,50px);
+    gap: 10%;
+    margin: 5%;
+    align-items: center;
+    justify-self: center;
+    box-shadow: 2px 5px 2px 5px #7ae4e180;
+    padding: 5%;
+}
+.social{
+    background-color: #7ae4e180;
+    text-align: center;
+    padding: 10px;
+    border-radius: 7px;
+}
+.social:hover{
+   background-color: black;
+   color: white;
+}
+.message{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.message a{
+    margin: 2%;
+    text-decoration: none;
+    background-color: blue;
+    padding: 10px;
+    border-radius: 25px;
+    color: white;
+}
+.message a:hover{
+    background-color: green;
+}
+.o{
+    text-align: center;
+    
+    
+}
+.main{
+    position: relative;
+    top: 0px;
+}
+.about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 6px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0,0, .5);
+    margin: 5%;
+    background-color: white;
+    gap: 40px;
+}
+.we{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 33px;
+    margin-bottom: 6px;
+    padding: 6px;
+   
+}
+
+.form form{
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+    
+}
+.options{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 6px;
+}
+.form-element{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+ .options .form-element input{
+    padding: 7px;
+    width: 50vw;
+    
+}
+.form-element input{
+    outline: none;
+    border: none;
+    background: rgba(0, 0,0, .3);
+    padding: 7px;
+    
+}
+.form-element input:focus{
+    background-color: rgba(0, 0,0, .2);
+    border: 1px solid blue;
+}
+.query{
+     margin: 4px;
+}
+.query input{
+    width: 50vw;
+    padding: 7px;
+}
+
+.query label{
+    font-weight: 600;
+}
+.form button{
+    padding: 7px;
+    margin: 7px;
+    width: 100px;
+    border: none;
+    background-color: blue;
+    color: white;
+}
+.form button:hover{
+    background-color: #8888dbb6;
+}
+.signup{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    
+}
+.newform .form-element input{
+    width: 300px;
+    padding: 7px;
+}
+.newform{
+    box-shadow: 2px 2px 2px 2px rgba(0, 0,0, .4);
+    border-radius: 6px;
+    padding: 10px;
+}
+.newform .form-element{
+    margin: 7px;
+  
+}
+.radio .form-element{
+    flex-direction: row;
+
+}
+.radio input{
+    margin: 0;
+}
+.links {
+    display: flex;
+    font-size: 0.7rem;
+    gap: 10px;
+    margin: 5px;
+}
+
+@media screen and (max-width : 900px){
+    html,body{
+        font-size:calc(16px * (100vw/10)) ;
+    }
+    header nav ul{
+        display: none;
+    }
+    header .searchbtn{
+        width: 300px;
+    }
+    header .menu{
+        display: block;
+    }
+    .footer{
+        gap: 1%;
+        grid-template-columns: repeat(2,40vw);
+    }
+    .box{
+        gap: 3%;
+        font-size: calc(10px-(5%));
+    }
+     .results{
+        width: 60vw;
+     }
+    .show{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 2px;
+        background-color: blue;
+        color: white;
+        width: 30vw;
+        height: 200px;
+        padding: 7px;
+       z-index: 10000;
+        
+    }
+    .show a{
+        color: white;
+        
+    }
+    .query input{
+        width: 80vw;
+    }
+    .options .form-element input{
+        width: 80vw;
+
+       }
+       .signup{ 
+         margin: 0;
+
+       }
+       .poll-list{
+        grid-template-columns: repeat(2,40vw);
+       }
+       .list{
+        grid-template-columns: repeat(2,40vw);
+        margin: 0;
+       }
+       
+ 
+}
+
+
+@media screen and (max-width:700px){
+   header nav ul{
+        display: none;
+    }
+    header .searchbtn{
+        width: 250px;
+    }
+    header nav ul li a:hover{
+        background-color: #b2c1e780;
+        color: white;
+        border-bottom: 2px solid white;
+        
+    }
+    .socials{
+        padding: 10%;
+    }
+    .query{
+        width: 80vw;
+    }
+    .query input{
+       width: 50;
+    }
+    .form-element input{
+        width: 80vw;
+       }
+       .newform .form-element{
+        margin: 7px 0 7px 0;
+       }
+       .newform{
+        width: 50vw;
+    }
+    .newform .form-element input{
+        width: 40vw;
+    }
+    .links{
+        flex-direction: column;
+    }
+    .poll-list{
+        grid-template-columns: repeat(1,90vw);
+       }
+       .results{
+        width: 80vw;
+       }
+       .list{
+        grid-template-columns: repeat(1,90vw);
+       }
+}
+
+@media screen and (max-width:500px){
+    header nav ul{
+        font-size: 12px;
+    }
+
+    header .searchbtn{
+        width: 200px;
+    }
+    .footer{
+        gap: 1%;
+        grid-template-columns: repeat(1,40vw);
+    }
+    .contact .socials{
+        margin: 20%;
+        padding: 8px;
+    }
+    .socials{
+        padding: 30%;
+        margin: 7%;
+        width: 70vw;
+        height: 40vh;
+    }
+   .form-element input{
+    width: 80vw;
+   }
+   .newform{
+    width: 90vw;
+}
+.newform .form-element input{
+    width: 60vw;
+}
+.search-form form input{
+    width: 80vw;
+}
+.results{
+    width: 95vw;
+}
+}
+

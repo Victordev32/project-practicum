@@ -1,0 +1,309 @@
+.mini{  
+    position: absolute; 
+    top: 70px;
+    left: 0;
+    width: 150px;
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+    padding: 6px;
+}
+.mini a{
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+}
+.mini i{
+    font-style: normal;
+    font-weight: 600;
+    font-size: small;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+   
+}
+.mini i span{
+    
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.rotate{
+    transform: rotate(90deg);
+}
+
+aside{
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+    left: 0;
+    top: 200px;
+    width: 150px;
+    max-width: 100%;
+    padding: 10px;
+    background-color: blue;
+    z-index: 1001;
+}
+aside a{
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding: 3px;
+}
+aside a:hover{
+    background-color: rgba(0,0, blue, 0.5);
+}
+.vis{
+    display: flex;
+    height: 200px;
+    top: 0;
+}
+.form{
+    margin-bottom: 33px;
+}
+.search-form{
+    height: 200px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+} 
+.search-form form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.search-form form input{
+    width: 400px;
+    padding: 7px;
+}
+
+.search-form form button{
+    width: 100px;
+    border: none;
+    background-color: blue;
+    padding: 7px;
+    color: white;
+}
+.poll-list{
+   display: grid;
+   
+   grid-template-columns: repeat(3,30vw);
+   align-items: center;
+   justify-content: center;
+}
+.poll{
+    
+    padding: 6px;
+    background-color: white;
+    margin: 30px;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,255, 0.5);
+    font-size: 0.9rem;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+.title{
+    display: flex;
+    justify-content: space-between;
+   
+
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.details i{
+    font-size: .7rem;
+}
+.poll a{
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+    width: 100px;
+    padding: 6px;
+    text-align: center;
+    display: inline-block;
+    margin: 4px;
+}
+.poll a:hover{
+    background-color: rgba(0,0,255, 0.5);
+}
+.res{
+    text-align: center;
+}
+
+.results{
+    
+    width: 40vw;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 2px 2px 2px 2px blue;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.results .votes{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.results .candidate{
+    background-color: blue;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    width: 300px;
+    border-radius: 20px;
+    padding: 10px;
+}
+.list{
+    
+    margin: 10px;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3,400px);
+    gap: 10px;
+    color: black;
+}
+.resdiv{
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-top: 25px;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.resdiv a{
+    background-color: blue;
+    width: 100px;
+    color: white;
+    padding: 3px;
+    text-decoration: none;
+}
+.resdiv a:hover{
+    background-color:rgba(0,0,255, 0.3) ;
+    
+}
+.update{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+.update input{
+    width: 300px;
+}
+.update button{
+    background-color: blue;
+    border: none;
+    margin: 7px;
+    padding: 7px;
+    color: white;
+}
+.update button:hover{
+    background-color: rgba(0,0, 255, 0.5);
+}
+.newinput{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.view{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    
+    
+    left: 40%;
+    width: 400px;
+    padding: 10px;
+}
+.view .detail{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.view .detail .opt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3px;
+} 
+.view .form-element{
+  flex-direction: row;
+}
+.view .form-element button{
+    padding: 6px;
+    background-color: blue;
+    color: white;
+    border: none;
+}
+.view .form-element button:hover{
+   background-color: rgba(0,0, 255, 0.5); 
+}
+.view .form-element button:focus{
+    background-color: rgba(0,0, 255, 0.7); 
+    border: 1px solid black;
+    border-radius: 2px;
+ }
+ .view a{
+    background-color: blue;
+    text-decoration: none;
+    padding: 5px;
+    color: white;
+ }
+.view a:hover{
+    background-color: rgba(0,0, 255, 0.5);
+ }
+
+.vote-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.vote-form{
+    display: flex;
+   
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+}
+.vote-form form{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 2px 2px blue;
+    padding: 6px;
+    gap:10px;
+}
+.vote-form button{
+    background-color: blue;
+    border: none;
+    padding: 3px;
+    color: white;
+}
+
+.vote-form button:hover{
+    background-color: rgba(0,0, 255, 0.5);
+}
+.vote-form button:focus{
+    background-color: rgba(0,0, 255, 0.3);
+}
