@@ -4,8 +4,8 @@
         <div class="box">
             <p>Quick links</p>
             <div class="item">
-                <a href="contact-us.html">About us</a>
-                <a href="about-us.html">Contact us</a>
+                <a href="about.html">About us</a>
+                <a href="contact-us.html">Contact us</a>
                 <a href="managecookie.php">Prefferences</a>
             </div>
             
@@ -29,3 +29,6 @@
     </div>
    <p class="copy"> &copy Copyright Wiser 2025</p>
 </footer>
+<?php
+mysqli_close($con);
+?>

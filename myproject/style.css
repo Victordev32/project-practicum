@@ -15,7 +15,11 @@ body{
     color: red;
 }
 .success{
+   
     color: green;
+}
+.warn{
+    color: hsl(68, 100%, 50%);
 }
 header{
     display: flex;
@@ -110,7 +114,7 @@ nav ul li a:hover{
 }
 footer{
     background-color: rgba(0, 0,0, .1);
-    margin-top: 200px;
+    margin-top: 10px;
 }
 footer p.copy{
     text-align: center;
@@ -204,10 +208,7 @@ footer p.copy{
     
     
 }
-.main{
-    position: relative;
-    top: 0px;
-}
+
 .about{
     display: flex;
     flex-direction: column;
@@ -321,7 +322,48 @@ footer p.copy{
     gap: 10px;
     margin: 5px;
 }
+.faqs{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80vw;
+    margin: 10px 10vw 10px 10vw;
+    
+}
+.faqs .top{
+    box-shadow: 2px 2px 2px black;
+    max-width: 100vw;
 
+}
+.faqs .top div:first-child{
+    background-color: hsl(240, 95%, 74%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    color: white;
+}
+.faqs .top div:first-child span{
+    font-size: 1.3rem;
+    transition: rotate .5s;
+}
+.faqs .top div:first-child span:hover{
+    background-color: white;
+    color: blue;
+    padding: 2px;
+  
+}
+.faqs .top .div3{
+    padding: 5px;
+     display: none;
+}
+.read{
+    display: block;
+    
+}
+.rot{
+    rotate: 90deg;
+}
 @media screen and (max-width : 900px){
     html,body{
         font-size:calc(16px * (100vw/10)) ;

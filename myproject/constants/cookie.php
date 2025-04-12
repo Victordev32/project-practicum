@@ -1,19 +1,9 @@
 <?php
-$randno=rand(1,6000);
 
-$username="user{$randno}";
+setcookie("name","victor",time()+3848484,'/');
 
-if(isset($_COOKIE['username'])){
-   $user=$_COOKIE['username'];
-
+if(isset($_COOKIE['hasvotedFor23'])){
+    echo $_COOKIE['hasvotedFor23'];
 }
-else{
-    $ck=setcookie('username',$username,time()+(864000*30),'/');
-    if($ck){
-        $_SESSION['cookie']='Success';
-    }
-}
-
-
 
 ?>

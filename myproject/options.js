@@ -11,7 +11,7 @@ function createInput(){
      div.classList.add('optn')
      div.innerHTML=`
      <label for="option${i}">Option ${i}</label>
-     <input type="text" name="options[]" id="options${i}">`;
+     <input type="text" name="options[]" id="option${i}">`;
      options.appendChild(div)
     
 

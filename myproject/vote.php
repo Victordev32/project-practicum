@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 date_default_timezone_set("Africa/Nairobi");
 include("constants/connect.php");
 include("constants/cookie.php");
@@ -10,8 +11,14 @@ if(!isset($_GET['id'])&& empty($_GET['id'])){
 else{
     $pid=filter_input(INPUT_GET,"id",FILTER_VALIDATE_INT);
 }
-
+ 
+ function voteCookies($poll){
+    $value='hasvotedFor'.$poll;
+     $scookie=setcookie($value,"yes",time()+30*24*60*60,"/");
+ }
 $vote;
+
+   
 if(isset($_POST['submit'])){
     if(isset($_POST['poll'.$pid])){
         $vote=$_POST['poll'.$pid];
@@ -21,14 +28,27 @@ if(isset($_POST['submit'])){
     }
     
 if(isset($vote)){
+    
+    
+   
+    if(isset($_COOKIE['hasvotedFor'.$pid])&&$_COOKIE['hasvotedFor'.$pid]=='yes'){
+        $_SESSION['voted']= "<small class='warn'>You have already voted for this poll</small>";
+        echo $_COOKIE['hasvotedFor'.$pid];
+       }else{
+       
     $ins_vote="INSERT INTO votes(optid,pollid,date_voted) VALUES('$vote','$pid',NOW())";
     $nres=mysqli_query($con,$ins_vote);
 
     if($nres){
-        $SESSION['votes']="<small class='success'>Voted successfully!</small>";
+        $_SESSION['votes']="<small class='success'>Voted successfully!</small>";
+        $v=rand(10,10000);
+        
+        voteCookies($pid);
     }
 }
 }
+}
+
 
 ?>
 
@@ -53,16 +73,24 @@ if(isset($vote)){
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About us</a></li>
                 <li><a href="contact-us.html">Contact us</a></li>
+                <?php 
+                if(!isset($_SESSION['id'])){
+               
+                
+                ?>
                 <li><a class="reg" href="signup.php">Sign  up</a></li>
+                <?php
+                }
+                ?>
             </ul>
         </nav>
-     <div class="searchbtn">
+     <!-- <div class="searchbtn">
         <form action="search.php" method="get">
         <input type="search" name="search">
         <button type="submit" name="search">Search</button>
     </form>
    
-     </div>    
+     </div>     -->
         <div class="menu">
 
            <i class="fa fa-bars">i</i>
@@ -71,14 +99,15 @@ if(isset($vote)){
     </header>
     <div class="main">
         <div class="vote-form">
-           <?php
- if(isset($_SESSION['votes'])){
-    echo $_SESSION['votes'];
-    unset($_SESSION['votes']);
-   }
-           ?>
+     
             <form action="" method="post">
             <h3 class="res">Vote</h3>
+            <?php
+           if(isset($_SESSION['voted'])){
+              echo $_SESSION['voted'];
+              unset($_SESSION['voted']);
+           }
+            ?>
               <?php
                    $sepol="SELECT * FROM polls WHERE id='$pid'";
                    $res=mysqli_query($con,$sepol);
@@ -154,15 +183,17 @@ if(isset($vote)){
                     echo $_SESSION['vote'];
                     unset($_SESSION['vote']);
                    }
+                 
+                   
                    if(isset($_SESSION['votes'])){
-                    echo $_SESSION['votes'];
-                    //unset($_SESSION['votes']);
-                   }
-                  
+                      echo $_SESSION['votes'];
+                      unset($_SESSION['votes']);
+                     }
+                             
               ?>
               
               <button type="submit" name="submit">Vote</button>
-              <a href="res.php?id=<?php echo $pid?>">View results</a>
+              <a href="single.php?id=<?php echo $pid?>">View results</a>
               <form/>
         </div>
     </div>

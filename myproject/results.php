@@ -32,7 +32,7 @@ else{
 <div class="vote-cont">
     <div class="list">
 <?php
-$selpoll="SELECT * FROM polls WHERE userid ='3'";
+$selpoll="SELECT * FROM polls WHERE userid ='$id'";
 
 $res=mysqli_query($con,$selpoll);
 if(mysqli_num_rows($res)>0){
@@ -52,6 +52,12 @@ if(mysqli_num_rows($res)>0){
       
    <?php
     }
+}else{
+    ?>
+<div class="resdiv">
+    You have no polls to view results.
+</div>
+    <?php
 }
    ?>
     </div>

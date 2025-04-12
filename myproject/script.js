@@ -9,18 +9,18 @@ let menubtn=document.querySelector('.mini i span')
 
 
 document.onscroll=()=>{
-    header.style.position='fixed'
+    
     header.style.top="0";
       header.style.width="100%"
     header.style.maxWidth="100%"
     header.style.height="70px"
-   //main.style.top="130px"
+   main.style.paddingTop="20px"
     header.style.zIndex=1000
     header.style.boxShadow='0px 2px 2px rgba(0,0,0,.1)';
     menu.classList.remove('show')
     aside.classList.remove('vis')
     menubtn.classList.remove('rotate')
-    mini.style.position="fixed"
+    
 
 }
 

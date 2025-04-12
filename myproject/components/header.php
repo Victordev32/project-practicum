@@ -7,16 +7,22 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About us</a></li>
                 <li><a href="contact-us.html">Contact us</a></li>
-                
+                <?php
+                  if(!isset($_SESSION['id'])){
+                    ?>
+                    <li><a href="signup.php">Sign up</a></li>
+                    <?php
+                  }
+                ?>
             </ul>
         </nav>
-     <div class="searchbtn">
+     <!-- <div class="searchbtn">
         <form action="search.php" method="get">
         <input type="search" name="search">
         <button type="submit" name="search">Search</button>
     </form>
    
-     </div>
+     </div> -->
     
         <div class="menu">
 

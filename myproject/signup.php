@@ -19,14 +19,14 @@ if(isset($_POST['email'])&&trim($_POST['email'])!==''){
     $_SESSION['e']=$_POST['email'];
     if(empty($ema)){
 
-        $_SESSION['email']="<small class='error'>Please enter a valid email</small>";
+        $_SESSION['emails']="<small class='error'>Please enter a valid email</small>";
     }
     else{ 
   $email=$ema;
     }
  }
  else{
-      $_SESSION['email']="<small class='error'>Please enter an email </small>";
+      $_SESSION['emails']="<small class='error'>Please enter an email </small>";
  }
 
 if(isset($_POST['password'])&&trim($_POST['password'])!=''){
@@ -60,8 +60,8 @@ $_SESSION['p']=$_POST['cpassword'];
 
 if(isset($user)&&isset($password)&&isset($cpassword)&&isset($email)){
  $check_user="SELECT * FROM users WHERE username='$user' OR email='$email'";
-//$psw=hash('sha256',$password);
- $insert_user="INSERT INTO users(username,email,password,register_date) VALUES('$user','$email','$password',NOW())";
+$hashpsw=password_hash($cpassword,PASSWORD_DEFAULT);
+ $insert_user="INSERT INTO users(username,email,password,register_date) VALUES('$user','$email','$hashpsw',NOW())";
 
 $query=mysqli_query($con,$check_user);
 if(mysqli_num_rows($query)>0){
@@ -148,13 +148,13 @@ else{
                     <input type="text" name="email" id="email" value="<?php 
                       if(isset($_SESSION['e'])){
                         echo $_SESSION['e'];
-                        unset($_SESSION['e']);
+                       
                       }
                     ?>">
                     <?php
-                   if(isset($_SESSION['email'])){
-                    echo $_SESSION['email'];
-                    unset($_SESSION['email']);
+                   if(isset($_SESSION['emails'])){
+                    echo $_SESSION['emails'];
+                    unset($_SESSION['emails']);
                    }
                     
                     ?>

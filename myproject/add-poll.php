@@ -59,7 +59,7 @@ if(count($_POST['options'])<2){
 
 
 if(isset($datecloses)&&isset($query)&&isset($options)&&isset($details)){
-$ins_poll="INSERT INTO polls(userid,title,details,datecreated,closeon) VALUES('$id','$query',''$details,NOW(),'$datecloses')";
+$ins_poll="INSERT INTO polls(userid,title,details,datecreated,closeon) VALUES('$id','$query','$details',NOW(),'$datecloses')";
 
 $poll_query=mysqli_query($con,$ins_poll);
 
@@ -69,9 +69,8 @@ if($poll_query){
 $ins_id=mysqli_insert_id($con);
 
 
-$i=1;
-$ins_op; //="INSERT INTO options(pollid,optio) VALUES('$ins_id','$options[$i]')";
-
+$i=0;
+$ins_op;
 for($i=0;$i<count($options);$i++){
    
   $options[$i]=mysqli_real_escape_string($con,$options[$i]);

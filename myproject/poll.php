@@ -41,6 +41,10 @@ unset($_SESSION['username']);
 ?>
     <div class="poll-list">
         <?php 
+        if(isset($_SESSION['delete'])){
+            echo $_SESSION['delete'];
+            unset($_SESSION['delete']);
+        }
         $retrieve_poll="SELECT * FROM polls WHERE userid='$id'";
          $res=mysqli_query($con,$retrieve_poll);
 if(mysqli_num_rows($res)>0){
@@ -82,16 +86,17 @@ if(mysqli_num_rows($res)>0){
                  
             <a href="view_details.php?id=<?php echo $row['id']?>">View details</a>
             <?php 
-              $d=strtotime($row['datecreated']);
+              $d=strtotime($row['closeon']);
 
-              if($d-time()>0){
+              if($d-time()<0||isset($row['lastupdate'])){
 
-
+            
               
             ?>
                 
                 <a href="single.php?id=<?php echo $row['id']?>">View results</a>
-                <?php }
+                <?php 
+                }
                 else{
 
                     ?>

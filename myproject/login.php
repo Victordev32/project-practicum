@@ -1,10 +1,7 @@
 <?php
 session_start();
 include("constants/connect.php");
-// $a=hash_algos();
-// sha256();
 
-//echo "<script>console.log('{$a[5]}')</script>";
 if(isset($_POST['submit'])){
 $email;
 $pass;
@@ -35,24 +32,29 @@ if(isset($_POST['password'])&& trim($_POST['password'])!=''){
     }
   }
   else{
-      $_SESSION['pa']='<small class="error">Please enter your email</small>';
+      $_SESSION['pa']='<small class="error">Please enter a paasword</small>';
   }
 
 
 
 if(isset($email)&&isset($pass)){
-$valid="SELECT * FROM users WHERE email='$email' AND password='$pass'";
+$valid="SELECT * FROM users WHERE email='$email'";
 
 $res=mysqli_query($con,$valid);
 
 if(mysqli_num_rows($res)==1){
     $row=mysqli_fetch_assoc($res);
-  
-   $_SESSION['id']=$row['id'];
+  if(password_verify($pass,$row['password'])){
+  $_SESSION['id']=$row['id'];
    $_SESSION['username']=$row['username'];
+  
    header('location:poll.php');
+  
 
-
+  }
+  else{
+    $_SESSION['not']="<small class='error'>Incorrect password</small>";
+  }
 }
 else{
 
